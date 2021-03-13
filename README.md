@@ -1,5 +1,5 @@
 # typecho-bearwind
-<img src="https://bearstudio-1251937905.cos.ap-shanghai.myqcloud.com/2021/03/13/微信截图_20210313092255.png"></img>
+<a href="http://bearwind.typecho.bearlab.in">演示站</a>
 小而美，轻松创作的Typecho主题
 
 不妨点击右上角的Star按钮，给本开源主题加个小星星，不胜感激~
