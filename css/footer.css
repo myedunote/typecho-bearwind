@@ -1,0 +1,140 @@
+/*
+//*BearWind Template For Typecho
+//*Author:WhiteBear
+//*Footer CSS
+*/
+
+.cid-qv5ALL8e7H {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: url(/usr/themes/bearwind/images/footer/jumbotron.jpg);
+    background-position: center;
+}
+.cid-qv5ALL8e7H .mbr-overlay {
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    opacity: .5;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+}
+.cid-qv5ALL8e7H .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+@media (min-width: 992px)
+.cid-qv5ALL8e7H .container {
+    max-width: 960px;
+}
+@media (min-width: 768px)
+.cid-qv5ALL8e7H .container {
+    max-width: 720px;
+}
+@media (min-width: 576px)
+.cid-qv5ALL8e7H .container {
+    max-width: 540px;
+}
+.cid-qv5ALL8e7H .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+.cid-qv5ALL8e7H .media-container-row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 992px)
+.cid-qv5ALL8e7H .media-container-row {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+.cid-qv5ALL8e7H .media-container-row {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: start;
+    -ms-flex-align: start;
+    align-items: start;
+}
+.mbr-white {
+    color: #ffffff;
+}
+.mbr-text {
+    font-style: normal;
+    line-height: 1.6;margin: 0 auto;
+}
+.mbr-bold {
+    font-weight: 700;
+}
+
+.cid-qv5ALL8e7H .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    z-index: 2;
+}
+.cid-qv5ALL8e7H .media-container-row .row-copirayt {
+    word-break: break-word;
+    margin: 0 auto;
+}
+
+.cid-qv5ALL8e7H .media-container-row .foot-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-bottom: 0;
+    margin: 0 auto;
+}
+.cid-qv5ALL8e7H ul, ol, pre, blockquote {
+    margin-bottom: 2.3125rem;
+}
+.cid-qv5ALL8e7H .media-container-row .foot-menu li {
+    padding: 0 1rem 1rem 1rem;
+}
+.align-center {
+    text-align: center;
+}
+.cid-qv5ALL8e7H .media-container-row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 992px)
+.media-container-row {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+.text-white {
+    color: #ffffff !important;
+}
+.cid-qv5ALL8e7H a:hover{
+    color: var(--color-body)!important;
+}
