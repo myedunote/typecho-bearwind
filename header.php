@@ -34,8 +34,17 @@
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/vendor.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/OwO.min.css'); ?>">
     <script src="<?php $this->options->themeUrl('js/modernizr.js'); ?>"></script>
+    <?php if ($this->options->CodeHighLight == "1"): ?>
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/prism.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style-pri.css'); ?>">
+    <?php endif; ?>
     <?php if ($this->options->Gray == '1'): ?>
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/gray.css'); ?>">
+    <?php endif; ?>
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/article-t.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/reward.css'); ?>">
+    <?php if ($this->options->Pjax == "1"): ?>
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/nprogress.css'); ?>">
     <?php endif; ?>
 <style>
     html, body {
@@ -61,13 +70,18 @@
 
     <?php $this->header(); ?>
 </head>
-
+<?php if ($this->options->Pjax == "1"): ?>
+<div id='pjax'>
+<body id="top">
+<div class="bearwind-wrapper">
+<?php endif; ?>
+<?php if ($this->options->Pjax == "2"): ?>
 <body id="top">
 <div class="bearwind-wrapper">
     <div id="preloader">
         <div id="loader"></div>
     </div>
-
+<?php endif; ?>
     <header class="s-header">
 
         <div class="row s-header__content">

@@ -7,6 +7,7 @@
 </style>
  <link rel="stylesheet" href="<?php $this->options->themeUrl('css/copyright.css'); ?>">
             <div style="background:#FFF; color:#000">
+              
 <section class="s-content s-content--single">
         <div class="row">
             <div class="column large-12">
@@ -26,7 +27,9 @@
                  <div class='right'>
                         <img src="<?php $this->options->themeUrl('images/article/xyh.svg'); ?>">
                         </div>
+                        
 <hr>
+
                         <ul class="stats-tabs align-center">
                         <li><a><font color="gray"><?php get_post_view($this) ?></font><em>阅读数</em></a></li>
                     <li><a><font color="gray"><?php $this->commentsNum(); ?></font><em>评论数</em></a></li>
@@ -40,6 +43,28 @@
 文章标题：<a href="<?php $this->permalink() ?>"><?php $this->title() ?></a><br><span>本文地址：<a href="<?php $this->permalink() ?>"><?php $this->permalink() ?></a></span>      <br><span>版权说明：若无注明，本文皆为“<a href="<?php $this->options->siteUrl(); ?>" target="_blank" data-original-title="<?php $this->options->title() ?>"><?php $this->options->title() ?></a>”原创，转载请保留文章出处。</span>
 </div>
 
+<?php endif; ?>
+<?php if ($this->options->Reward == '1'): ?>
+<div style="padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;">
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+        <span>打赏</span></button>
+    <div id="QR" style="display: none;">
+        <?php if ($this->options->RewardWechatHidden == '1'): ?>
+        <div id="wechat" style="display: inline-block">
+            <a class="fancybox" rel="group">
+                <img id="wechat_qr" src="<?php $this->options->RewardWechatQrcode() ?>" alt="WeChat Pay"></a>
+            <p>微信打赏</p>
+        </div>
+        <?php endif; ?>
+        <?php if ($this->options->RewardAlipayHidden == '1'): ?>
+        <div id="alipay" style="display: inline-block">
+            <a class="fancybox" rel="group">
+                <img id="alipay_qr" src="<?php $this->options->RewardAlipayQrcode() ?>" alt="Alipay"></a>
+            <p>支付宝打赏</p>
+        </div>
+        <?php endif; ?>
+    </div>
+</div>
 <?php endif; ?>
 <span><h5>标签:<?php $this->tags(',', true, 'none'); ?></h5></span>
 

@@ -1,0 +1,74 @@
+#bearwind_notice {
+ color: #7da33c;
+ background: #ecf2d6 url('/usr/themes/bearwind/images/article/sc_notice.png') -1px -1px no-repeat;
+ border: 1px solid #aac66d;
+ overflow: hidden;
+ margin: 10px 0;
+ padding: 15px 15px 15px 35px;
+ }
+#bearwind_warn {
+ color: #ad9948;
+ background: #fff4b9 url('/usr/themes/bearwind/images/article/sc_warn.png') -1px -1px no-repeat;
+ border: 1px solid #eac946;
+ overflow: hidden;
+ margin: 10px 0;
+ padding: 15px 15px 15px 35px;
+ }
+#bearwind_error {
+ color: #c66;
+ background: #ffecea url('/usr/themes/bearwind/images/article/sc_error.png') -1px -1px no-repeat;
+ border: 1px solid #ebb1b1;
+ overflow: hidden;
+ margin: 10px 0;
+ padding: 15px 15px 15px 35px;
+ }
+#bearwind_tips {
+ color: #777;
+ background: #eaeaea url('/usr/themes/bearwind/images/article/sc_tips.png') -1px -1px no-repeat;
+ border: 1px solid #ccc;
+ overflow: hidden;
+ margin: 10px 0;
+ padding: 15px 15px 15px 35px;
+}
+#bearwind_blue {
+ color: #1ba1e2;
+ background: rgba(27, 161, 226, 0.26) url('/usr/themes/bearwind/images/article/sc_blue.png') -1px -1px no-repeat;
+ border: 1px solid #1ba1e2;
+ overflow: hidden;
+ margin: 10px 0;
+ padding: 15px 15px 15px 35px;
+}
+#bearwind_black {
+ border-width: 1px 4px 4px 1px;
+ border-style: solid;
+ border-color: #3e3e3e;
+ margin: 10px 0;
+ padding: 15px 15px 15px 35px;
+}
+#bearwind_xuk {
+ border: 2px dashed rgb(41, 170, 227);
+ background-color: rgb(248, 247, 245);
+ margin: 10px 0;
+ padding: 15px 15px 15px 35px;
+}
+#bearwind_lvb {
+ margin: 10px 0;
+ padding: 10px 15px;
+ border: 1px solid #e3e3e3;
+ border-left: 2px solid #05B536;
+ background: #FFF;
+}
+#bearwind_redb {
+ margin: 10px 0;
+ padding: 10px 15px;
+ border: 1px solid #e3e3e3;
+ border-left: 2px solid #ED0505;
+ background: #FFF;
+}
+#bearwind_orange {
+ margin: 10px 0;
+ padding: 10px 15px;
+ border: 1px solid #e3e3e3;
+ border-left: 2px solid #EC8006;
+ background: #FFF;
+}
