@@ -4,7 +4,7 @@
  * 
  * @package BearWind
  * @author  WhiteBear
- * @version 1.1
+ * @version 1.2
  * @link https://www.coder-bear.com/
  */
 

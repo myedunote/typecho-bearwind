@@ -1,5 +1,20 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-
+<style>
+    .textarea{ 
+ background-image: url(<?php if ($this->options->CommentBackground == '1'): ?><?php if ($this->options->CommentBackgroundUrl !== null): ?><?php $this->options->CommentBackgroundUrl() ?><?php endif; ?><?php endif; ?><?php if ($this->options->CommentBackground == '1'): ?><?php if ($this->options->CommentBackgroundUrl == null): ?><?php $this->options->themeUrl('images/bear-comment.png'); ?><?php endif; ?><?php endif; ?>); 
+ transition: all 0.25s ease-in-out 0s; 
+ } 
+ .textarea:focus { 
+ background-position-y: 105px; 
+ transition: all 0.25s ease-in-out 0s; 
+ } 
+ .textarea { 
+ resize: none; 
+ background-size: contain; 
+ background-repeat: no-repeat; 
+ background-position: right; 
+ } 
+</style>
 <div class="comments-wrap">
             <div id="comments" class="row">
                 <div class="column">
@@ -106,7 +121,7 @@
     		    <?php if ($this->options->Commentszs == '1'): ?>
                                 <textarea name="text" id="text" class="h-full-width OwO-textarea" placeholder="嘿~ 大神，别默默的看了，快来点评一下吧" maxlength="<?php $this->options->CommentMaxlength() ?>" minlength="<?php $this->options->CommentMinlength() ?>"></textarea>
                                 <?php else: ?>
-                                <textarea name="text" id="text" class="h-full-width OwO-textarea" placeholder="嘿~ 大神，别默默的看了，快来点评一下吧"></textarea>
+                                <textarea name="text" id="textarea" class="h-full-width OwO-textarea textarea" placeholder="嘿~ 大神，别默默的看了，快来点评一下吧"></textarea>
                           <?php endif; ?>
                             </div>
                             <?php if ($this->options->CommentVerify == '1'): ?>

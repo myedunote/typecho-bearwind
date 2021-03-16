@@ -2,18 +2,21 @@
 position: relative;
 background: #000;
 padding-top: 20px;
-border-radius: 5px;
+border-radius: 10px;
+
+
 }
 
 
 pre[class*="language-"].line-numbers {
 position: relative;
-padding: 3px; /*修改*/
+padding: 3px; 
 padding-left: 3.8em; 
 counter-reset: linenumber;
-max-height: 400px;/*修改*/
-background: #151515;/*修改*/
+max-height: 400px;
+background: #151515;
 border: none;
+border-radius: 10px;
 }
 .pre-mac{
 position: absolute;

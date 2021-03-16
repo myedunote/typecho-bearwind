@@ -34,7 +34,7 @@
                   <li><a><font color="gray"><?php art_count($this->cid); ?></font><em>文章字数</font></em></a></li>
                   <li><a><font color="gray"><?php echo gmdate('Y-m-d H:i', $this->modified + Typecho_Widget::widget('Widget_Options')->timezone); ?></font></time><em>最后修改时间</em></a></li>
                 </ul>
-                <?php if ($this->options->Copyright == '1'): ?>
+                <?php if($this->fields->articlecopyright == '1'): ?>
                         <div class="cpright">
 <span>本文作者： <a class="meta-value" href="<?php $this->author->permalink(); ?>" rel="author"> <?php $this->author(); ?></a></span>   <br>
 文章标题：<a href="<?php $this->permalink() ?>"><?php $this->title() ?></a><br><span>本文地址：<a href="<?php $this->permalink() ?>"><?php $this->permalink() ?></a></span>      <br><span>版权说明：若无注明，本文皆为“<a href="<?php $this->options->siteUrl(); ?>" target="_blank" data-original-title="<?php $this->options->title() ?>"><?php $this->options->title() ?></a>”原创，转载请保留文章出处。</span>

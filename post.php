@@ -36,7 +36,7 @@
                   <li><a><font color="gray"><?php art_count($this->cid); ?></font><em>文章字数</font></em></a></li>
                   <li><a><font color="gray"><?php echo gmdate('Y-m-d H:i', $this->modified + Typecho_Widget::widget('Widget_Options')->timezone); ?></font></time><em>最后修改时间</em></a></li>
                 </ul>
-                <?php if ($this->options->Copyright == '1'): ?>
+                <?php if($this->fields->articlecopyright == '1'): ?>
                         <div class="cpright">
                 <span>标签:<?php $this->tags(',', true, 'none'); ?></span>  <br> 
 <span>本文作者： <a class="meta-value" href="<?php $this->author->permalink(); ?>" rel="author"> <?php $this->author(); ?></a></span>   <br>
@@ -66,7 +66,9 @@
     </div>
 </div>
 <?php endif; ?>
+<?php if($this->fields->articlecopyright == '2'): ?>
 <span><h5>标签:<?php $this->tags(',', true, 'none'); ?></h5></span>
+<?php endif; ?>
 
                         <div class="s-content__pagenav group">
                             <div class="prev-nav">

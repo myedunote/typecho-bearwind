@@ -99,7 +99,7 @@ echo '<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/semantic-ui
     <i class="github icon"></i> 当前版本/最新版本
   </div>
   <a class="ui basic black left pointing label" href="https://github.com/whitebearcode/typecho-bearwind">
-    V1.1/V';GetVersion();echo '[Github]';
+    V1.2/V';GetVersion();echo '[Github]';
   echo '</a>
 </div></center>
 <br>
@@ -244,8 +244,6 @@ $CommentVerify = new Typecho_Widget_Helper_Form_Element_Radio('CommentVerify', a
     $form->addInput($CommentVerify);
     $Gray = new Typecho_Widget_Helper_Form_Element_Radio('Gray', array('1' => '开启哀悼模式',  '2' => '关闭哀悼模式'), '2', '是否开启哀悼模式[即网站变灰]', '用于哀悼日');
     $form->addInput($Gray);
-    $Copyright = new Typecho_Widget_Helper_Form_Element_Radio('Copyright', array('1' => '文章显示版权',  '2' => '文章不显示版权'), '1', '文章是否显示版权', '版权意识很重要~若为原创自制建议开启,此为全局设置');
-    $form->addInput($Copyright);
     $Favicon = new Typecho_Widget_Helper_Form_Element_Text('Favicon', null, '', '站点Favicon', '请填入站点Favicon地址,要求直链,当此项不为空时,浏览器显示Favicon标志,当本项为空时，则不显示');
     $form->addInput($Favicon);
     $DNSYSX = new Typecho_Widget_Helper_Form_Element_Radio('DNSYSX', array('1' => '开启DNS预解析',  '2' => '禁用DNS预解析'), '1', '是否开启/禁用DNS预解析', '预置三个DNS预解析,对于某些情况而言开启能够提升访问速度,而禁用的话能节省每月100亿的DNS查询');
@@ -294,6 +292,12 @@ $CommentVerify = new Typecho_Widget_Helper_Form_Element_Radio('CommentVerify', a
     }
     $Pjax = new Typecho_Widget_Helper_Form_Element_Radio('Pjax', array('1' => '开启Pjax加载',  '2' => '关闭Pjax加载'), '1', '是否开启Pjax加载', '开启后将全站无刷新加载,相对而言速度也会快很多,不开启的话则为默认加载方式。');
     $form->addInput($Pjax);
+    $CommentBackground = new Typecho_Widget_Helper_Form_Element_Radio('CommentBackground', array('1' => '开启评论框背景',  '2' => '关闭评论框背景'), '2', '是否开启评论框背景', '开启后评论框将显示背景图片');
+    $form->addInput($CommentBackground);
+    if ($options->CommentBackground == '1'){
+        $CommentBackgroundUrl = new Typecho_Widget_Helper_Form_Element_Text('CommentBackgroundUrl', null, '', '评论框背景图片地址', '请填入评论框背景图片地址,必须直链,若为空将显示默认背景');
+    $form->addInput($CommentBackgroundUrl);
+    }
 }
 
 /**
