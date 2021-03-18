@@ -1,7 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/footer.css'); ?>">
-
 <div class="bearwind-push"></div>
   </div>
   <footer class="bearwind-footer">
@@ -35,6 +34,17 @@
                     © Copyright <?php echo date('Y');?> <a href="<?php $this->options->siteUrl(); ?>" class="text-white"><?php $this->options->title(); ?></a> All Rights Reserved.
                 </p>
             </div>
+            <?php if ($this->options->ICPBA && $this->options->GABA !== null): ?>
+            <?php $this->options->ICPBA(); ?> | <?php $this->options->GABA(); ?>
+            <?php endif; ?>
+            <?php if ($this->options->ICPBA == null && $this->options->GABA !== null): ?>
+            <?php $this->options->GABA(); ?>
+            <?php endif; ?>
+            <?php if ($this->options->ICPBA !== null && $this->options->GABA == null): ?>
+            <?php $this->options->ICPBA(); ?>
+            <?php endif; ?>
+            <?php $this->options->DiyHtml(); ?>
+            <?php $this->options->Tongji(); ?>
         </div>
     </div>
 </section>

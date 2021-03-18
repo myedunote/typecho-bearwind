@@ -23,14 +23,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <?php $this->options->Meta() ?>
     <title><?php $this->archiveTitle(array(
             'category'  =>  _t('分类[ %s ]下的文章'),
             'search'    =>  _t('包含关键字[ %s ]的文章'),
             'tag'       =>  _t('标签[ %s ]下的文章'),
             'author'    =>  _t('[ %s ]发布的文章')
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
-
+<?php if ($this->options->IndexPichidden == "2"): ?>
      <link rel="stylesheet" href="<?php $this->options->themeUrl('css/styles.css'); ?>">
+     <?php endif; ?>
+     <?php if ($this->options->IndexPichidden == "1"): ?>
+     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/styles-m.css'); ?>">
+     <?php endif; ?>
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/vendor.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/OwO.min.css'); ?>">
     <script src="<?php $this->options->themeUrl('js/modernizr.js'); ?>"></script>
@@ -46,6 +51,7 @@
     <?php if ($this->options->Pjax == "1"): ?>
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/nprogress.css'); ?>">
     <?php endif; ?>
+    
 <style>
     html, body {
   height: 100%;
@@ -53,16 +59,14 @@
 }
 .bearwind-wrapper {
   min-height: 100%;
-
-  
   margin-bottom: -50px;
 }
 .bearwind-footer,
 .bearwind-push {
-  height: 50px;
+  height:100px;
+
 }
 </style>
-
     <!--[if lt IE 9]>
     <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
@@ -90,11 +94,11 @@
                 
                     <?php if ($this->options->LOGO): ?>
                     <a class="logo" href="<?php $this->options->siteUrl(); ?>">
-<img src="<?php $this->options->LOGO() ?>" alt="<?php $this->options->title() ?>" />
+<img src="<?php $this->options->LOGO() ?>" alt="<?php $this->options->headertitle() ?>" />
 </a>
 <?php else: ?>
 <div class="logo">
-  <font size="6"><?php $this->options->title() ?></font>
+  <font size="<?php $this->options->headertitlesize() ?>"><a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->headertitle() ?></a></font>
               </div>
               <?php endif; ?>
             </div>
