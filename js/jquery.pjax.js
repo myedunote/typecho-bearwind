@@ -59,8 +59,7 @@ function handleClick(event, container, options) {
   var link = event.currentTarget
   var $link = $(link)
 
-  if (link.tagName.toUpperCase() !== 'A')
-    throw "$.fn.pjax or $.pjax.click requires an anchor element"
+  
 
   // Middle click, cmd click, and ctrl click should open
   // links in a new tab as normal.
@@ -901,3 +900,14 @@ if ($.support.pjax) {
 }
 
 })(jQuery)
+
+ $(document).ready(function() { //jQuery refresh
+ 	$(document).bind("keydown", function(e) {
+ 		e = window.event || e;
+ 		if (e.keyCode == 116) {
+ 			// e.keyCode = 0;
+ 			$.pjax.reload('#pjax', {fragment: '#pjax',timeout: 6000 })
+ 			return false;
+ 		}
+ 	});
+ });

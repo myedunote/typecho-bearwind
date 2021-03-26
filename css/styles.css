@@ -3706,33 +3706,9 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 /* ===================================================================
  * # site header
- *
+ * # For /type/header-background.php
  * ------------------------------------------------------------------- */
-.s-header {
-    z-index: 100;
-    width: 100%;
-    background-color: #ffffff;
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='1' viewBox='0 0 40 1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v1H0z' fill='%23151515' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
-    height: 12.8rem;
-    -webkit-box-shadow: 0px 1px 0px rgba(17, 17, 26, 0.03), 0px 8px 16px rgba(17, 17, 26, 0.04);
-    box-shadow: 0px 1px 0px rgba(17, 17, 26, 0.03), 0px 8px 16px rgba(17, 17, 26, 0.04);
-    position: relative;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-    align-items: center;
-}
 
-.s-header__content {
-    width: 100%;
-    height: auto;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-    align-items: center;
-    position: relative;
-}
 
 /* -------------------------------------------------------------------
  * ## header logo
@@ -3775,6 +3751,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     font-size: var(--text-sm);
     margin-top: var(--vspace-3);
     text-align: center;
+    
 }
 
 .s-header__nav-wrap .s-header__nav-heading, 
@@ -3789,12 +3766,14 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     font-family: var(--font-2);
     font-weight: 500;
     font-size: 1.6rem;
+ 
 }
 
 .s-header__nav li {
     display: inline-block;
     position: relative;
     padding: 0 1rem;
+ 
 }
 
 .s-header__nav li.has-children {
@@ -3806,6 +3785,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     color: rgba(0, 0, 0, 0.5);
     line-height: 5.2rem;
     position: relative;
+  
 }
 
 .s-header__nav li.has-children>a::after {
@@ -3826,11 +3806,13 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     position: absolute;
     right: -1.2rem;
     top: calc(50% + 2px);
+  
 }
 
 .s-header__nav li:hover>a, 
 .s-header__nav li:focus>a {
     color: black;
+
 }
 
 .s-header__nav li:hover li, 

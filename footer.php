@@ -1,10 +1,23 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
+<?php if ($this->options->Pjax == "1"): ?>
+</div>
+<?php endif; ?>
+</div></div>
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/footer.css'); ?>">
 <div class="bearwind-push"></div>
   </div>
   <footer class="bearwind-footer">
-<section style="position: relative" class="cid-qv5ALL8e7H" id="footer7-3k" data-rv-view="8796">
+      <style>
+          .bearwind_footerbackground {
+    padding-top: 30px;
+    padding-bottom: 30px;
+     background-image: url('<?php $this->options->FooterbackgroundImg() ?>');
+
+    background-position: center;
+}
+      </style>
+<section style="position: relative" class="cid-qv5ALL8e7H bearwind_footerbackground" id="footer7-3k" data-rv-view="8796">
     <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(51, 42, 104);"></div>
 
     <div class="container">
@@ -55,18 +68,32 @@
             </div>
 
 </footer>
-<?php if ($this->options->Pjax == "1"): ?>
-</div>
-<?php endif; ?>
+
    <!-- Java Script
    ================================================== -->
-     
-   <script src="<?php $this->options->themeUrl('js/jquery-3.2.1.min.js'); ?>"></script>
+    
+  
+ <script src="<?php $this->options->themeUrl('js/jquery-3.2.1.min.js'); ?>"></script>
    <?php if ($this->options->Pjax == "1"): ?>
    <script src="<?php $this->options->themeUrl('js/jquery.pjax.js'); ?>"></script>
+   <script src="<?php $this->options->themeUrl('js/nprogress.js'); ?>"></script>
    <?php endif; ?>
+   <?php if ($this->options->Mathgs == "1"): ?>
+<script>
+var katex_config = {
+	delimiters: 
+	[
+		{left: "$$", right: "$$", display: true},
+  		{left: "$", right: "$", display: false}
+	]
+};
+</script>
+<script defer src="<?php $this->options->themeUrl('js/katex/auto-render.min.js'); ?>" onload="renderMathInElement(document.body,katex_config)"></script>
+
+<?php endif; ?>
    <script src="<?php $this->options->themeUrl('js/plugins.js'); ?>"></script>
    <script src="<?php $this->options->themeUrl('js/main.js'); ?>"></script>
+
 
    <?php if ($this->options->CodeHighLight == "1"): ?>
    <script src="<?php $this->options->themeUrl('js/prism.js'); ?>"></script>
@@ -78,10 +105,10 @@ $("pre").before('<div class="pre-mac"><span></span><span></span><span></span></d
 </script>
 <?php endif; ?>
    <script type="text/javascript" src="<?php $this->options->themeUrl('js/commentTyping.js'); ?>"></script>
+   
 <?php if ($this->options->Pjax == "1"): ?>
-<script src="<?php $this->options->themeUrl('js/nprogress.js'); ?>"></script>
 <script>
-    function getBaseUrl() {
+function getBaseUrl() {
   var ishttps = 'https:' == document.location.protocol ? true : false;
   var url = window.location.host;
   if (ishttps) {
@@ -92,13 +119,20 @@ $("pre").before('<div class="pre-mac"><span></span><span></span><span></span></d
   return url;
 }
 let url = '"'+getBaseUrl()+'"';
-$(document).pjax('a[href^='+ url +']:not(a[target="_blank"], a[no-pjax])', {
-  container: '#pjax',
-  fragment: '#pjax',
-  timeout: 8000
-})
+
+var pjax_id = '#pjax';
+$(document).pjax('a[target!=_blank]', pjax_id, {fragment:pjax_id, timeout:6000});
 $(document).on('pjax:start',function() { NProgress.start(); });
-$(document).on('pjax:end',function() { NProgress.done(); });
+$(document).on('pjax:end',function() { NProgress.done(); 
+$(document).pjax('li', '#pjax-container')
+    $.ss();
+   
+$('katex-inline').each(function(i,e){t=$(this);h=t.html();try{katex.render(t.text(),e,{displayMode:false,throwOnError:false});}catch(b){t.html(h);console.warn('parse ' + h + ' error:' + b)}});
+$('katex').each(function(i,e){t=$(this);h=t.html();try{katex.render(t.text(),e,{displayMode:true,throwOnError:false});}catch(b){t.html(h);console.warn('parse ' + h + ' error:' + b)}
+
+});
+});
+
 if(typeof lazyload === "function") {
   $(document).on('pjax:complete', function () {
     jQuery(function() {
@@ -109,11 +143,20 @@ if(typeof lazyload === "function") {
     });
   });
 }else{
-  console.log('Finish Loading...');
+  console.log('BearWind lazyload finished');
 }
-
 </script>
 <?php endif; ?>
-</body>
+<?php if ($this->options->HtmlYS == "1"): ?>
+<?php $html_source = ob_get_contents(); ob_clean(); print compressHtml($html_source); ob_end_flush(); ?>
+<?php endif; ?>
+</div>
 
+<?php if ($this->options->Clicksk == "1"): ?>
+<canvas id="fireworks" style="position: fixed; left: 0px; top: 0px; pointer-events: none; z-index: 2147483647; width: 1920px; height: 151px;" width="3840" height="302"></canvas>
+<script type="text/javascript" src="<?php $this->options->themeUrl('js/tx/anime.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php $this->options->themeUrl('js/tx/Clicksk.js'); ?>"></script>
+<?php endif; ?>
+
+</body>
 </html>

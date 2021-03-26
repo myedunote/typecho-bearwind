@@ -1,6 +1,9 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php if ($this->options->CCFirewall1 == "1"): ?>
+<?php include 'libs/cc-firewall.php'; ?>
+<?php endif; ?>
 <!DOCTYPE HTML>
-<html class="no-js">
+<html>
 
 <head>
     <meta charset="<?php $this->options->charset(); ?>">
@@ -51,7 +54,11 @@
     <?php if ($this->options->Pjax == "1"): ?>
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/nprogress.css'); ?>">
     <?php endif; ?>
-    
+    <?php if ($this->options->Mathgs == "1"): ?>
+<link rel="stylesheet" href="<?php $this->options->themeUrl('css/katex/katex.min.css'); ?>">
+	<script defer src="<?php $this->options->themeUrl('js/katex/katex.min.js'); ?>"></script>
+
+<?php endif; ?>
 <style>
     html, body {
   height: 100%;
@@ -64,19 +71,46 @@
 .bearwind-footer,
 .bearwind-push {
   height:100px;
-
 }
+<?php if ($this->options->Diy == "1" && !empty($this->options->backgroundImg)) : ?>
+body.custom-background { 
+    background-image: url('<?php $this->options->backgroundImg() ?>'); 
+    background-repeat: no-repeat;
+    background-position: top left; 
+    background-attachment: fixed;
+    background-size:cover
+}
+<?php endif; ?>
+.commentlist{
+    margin-top: 0;
+}
+
+
 </style>
+<script src="<?php $this->options->themeUrl('js/jquery-3.2.1.min.js'); ?>"></script>
+<style>
+<?php $this->need('type/header-background.php'); ?>
+</style>
+<?php if ($this->options->Pjax == "1"): ?>
+    <script type="text/javascript">
+$(document).on('pjax:complete', function() {
+if (typeof Prism !== 'undefined') {
+var pres = document.getElementsByTagName('pre');
+for (var i = 0; i < pres.length; i++){
+if (pres[i].getElementsByTagName('code').length > 0)
+pres[i].className = 'line-numbers';}
+Prism.highlightAll(true,null);}
+});
+</script>
+<?php endif; ?>
     <!--[if lt IE 9]>
     <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
-
     <?php $this->header(); ?>
 </head>
 <?php if ($this->options->Pjax == "1"): ?>
-<div id='pjax'>
-<body id="top">
+<body id="top" class="custom-background">
 <div class="bearwind-wrapper">
 <?php endif; ?>
 <?php if ($this->options->Pjax == "2"): ?>
@@ -85,6 +119,9 @@
     <div id="preloader">
         <div id="loader"></div>
     </div>
+<?php endif; ?>
+     <?php if ($this->options->Pjax == "1"): ?>
+<div id="pjax">
 <?php endif; ?>
     <header class="s-header">
 
@@ -102,7 +139,7 @@
               </div>
               <?php endif; ?>
             </div>
-
+     
             <nav class="s-header__nav-wrap">
 
                 <h2 class="s-header__nav-heading h6">导航</h2>

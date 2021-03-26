@@ -171,10 +171,11 @@
     * ------------------------------------------------------ */
     const ssMasonry = function() {
         const containerBricks = document.querySelector('.bricks-wrapper');
+        // console.log(containerBricks)
         if (!containerBricks) return;
 
         imagesLoaded(containerBricks, function() {
-
+            // console.log('Loaded')
             const msnry = new Masonry(containerBricks, {
                 itemSelector: '.entry',
                 columnWidth: '.grid-sizer',
@@ -193,8 +194,9 @@
 
         const animateEl = document.querySelectorAll('.animate-this');
         if (!animateEl) return;
+        // console.log(animateEl)
 
-        window.addEventListener('load', function() {
+        //window.addEventListener('load', function() {
 
             setTimeout(function() {
                 animateEl.forEach(function(item, ctr) {
@@ -205,7 +207,7 @@
                     }, ctr * 200);
                 });
             }, 200);
-        });
+        //});
 
         window.addEventListener('resize', function() {
             // remove animation classes
@@ -350,7 +352,7 @@
 
    /* Initialize
     * ------------------------------------------------------ */
-    (function ssInit() {
+    function ssInit() {
 
         ssPreloader();
         ssAlertBoxes();
@@ -362,7 +364,9 @@
         ssSmoothScroll();
         ssAjaxChimp();
         ssBackToTop();
-
-    })();
-
+        console.log('init')
+    }// ()();
+    $.fn.ss = function() { return this }
+    ssInit()
+    $.ss = function() { ssInit() }
 })(jQuery);

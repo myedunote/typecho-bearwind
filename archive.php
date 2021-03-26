@@ -57,20 +57,7 @@
          </div>
         <?php endif; ?>
 
-<link rel="stylesheet" href="<?php $this->options->themeUrl('css/page.css'); ?>">
-<div class="row">
-            <div class="column large-12">
-                <nav class="pgn">
-                 <ul>
-                    
-                    
-  
-                        <?php $this->pageNav('«', '»', 3, '...', array('wrapTag' => 'ol', 'wrapClass' => 'page-navigator', 'itemTag' => 'li', 'textTag' => 'span', 'currentClass' => 'current', 'prevClass' => 'prev', 'nextClass' => 'next')); ?>
-</ul>
-                </nav>
-            </div>
-        </div>
-        
+<?php $this->need('type/pageNav.php'); ?>
     </section>
 
 	<?php $this->need('footer.php'); ?>

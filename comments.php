@@ -59,7 +59,7 @@
             <div class="comment__reply"><div class="comment-reply-link"><?php $comments->reply(); ?></div></div></div>
             <div class="comment__text">
                 <?php echo getPermalinkFromCoid($comments->parent); ?>
-                <?php $comments->content(); ?>
+                <?php echo reEmo($comments->text); ?>
             </div>
 </div>
          </li>              
@@ -117,14 +117,17 @@
                             </div>
 <?php endif; ?>
     		<div class="message form-field">
+    		   
     		    <div class="OwO"></div>
+    		    
     		    <?php if ($this->options->Commentszs == '1'): ?>
-                                <textarea name="text" id="text" class="h-full-width OwO-textarea" placeholder="嘿~ 大神，别默默的看了，快来点评一下吧" maxlength="<?php $this->options->CommentMaxlength() ?>" minlength="<?php $this->options->CommentMinlength() ?>"></textarea>
+                                <textarea name="text" id="textarea" class="h-full-width OwO-textarea" placeholder="嘿~ 大神，别默默的看了，快来点评一下吧" maxlength="<?php $this->options->CommentMaxlength() ?>" minlength="<?php $this->options->CommentMinlength() ?>"></textarea>
                                 <?php else: ?>
-                                <textarea name="text" id="textarea" class="h-full-width OwO-textarea textarea" placeholder="嘿~ 大神，别默默的看了，快来点评一下吧"></textarea>
+                                <textarea name="text" id="textarea" class="h-full-width OwO-textarea" placeholder="嘿~ 大神，别默默的看了，快来点评一下吧"></textarea>
                           <?php endif; ?>
                             </div>
                             <?php if ($this->options->CommentVerify == '1'): ?>
+
                                   <?php spam_protection_math();?>
                                   <?php endif; ?>
     		<p>
@@ -136,18 +139,8 @@
         </div> <!-- end comments-wrap -->
 
     </section> 
-    <script src="/usr/themes/bearwind/js/OwO.min.js"></script>
-    <script>
-        var OwO_demo = new OwO({
-            logo: 'OωO表情',
-            container: document.getElementsByClassName('OwO')[0],
-            target: document.getElementsByClassName('OwO-textarea')[0],
-            api: '/usr/themes/bearwind/js/OwO.json',
-            position: 'down',
-            width: '100%',
-            maxHeight: '250px'
-        });
-    </script>
+    
+     <script src="/usr/themes/bearwind/js/OwO.min.js"></script>
     <?php else: ?>
     <h3><?php _e('评论已关闭'); ?></h3>
     <?php endif; ?>

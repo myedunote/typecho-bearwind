@@ -4,11 +4,8 @@
 //*Footer CSS
 */
 
-.cid-qv5ALL8e7H {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-image: url(/usr/themes/bearwind/images/footer/jumbotron.jpg);
-    background-position: center;
+.cid-qv5ALL8e7H{
+  
 }
 .cid-qv5ALL8e7H .mbr-overlay {
     background-color: #000;
@@ -27,17 +24,20 @@
     padding-left: 15px;
     width: 100%;
 }
-@media (min-width: 992px)
+@media (min-width: 992px){
 .cid-qv5ALL8e7H .container {
     max-width: 960px;
 }
-@media (min-width: 768px)
+}
+@media (min-width: 768px){
 .cid-qv5ALL8e7H .container {
     max-width: 720px;
 }
-@media (min-width: 576px)
+}
+@media (min-width: 576px){
 .cid-qv5ALL8e7H .container {
     max-width: 540px;
+}
 }
 .cid-qv5ALL8e7H .container {
     margin-right: auto;
@@ -52,11 +52,12 @@
     justify-content: center;
     align-items: center;
 }
-@media (min-width: 992px)
+@media (min-width: 992px){
 .cid-qv5ALL8e7H .media-container-row {
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
+}
 }
 .cid-qv5ALL8e7H .media-container-row {
     display: -ms-flexbox;
@@ -126,11 +127,12 @@
     justify-content: center;
     align-items: center;
 }
-@media (min-width: 992px)
+@media (min-width: 992px){
 .media-container-row {
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
+}
 }
 .text-white {
     color: #ffffff !important;
