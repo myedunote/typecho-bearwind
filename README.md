@@ -9,6 +9,7 @@ QQ交流群:561848356<br>
 <a href = "https://www.coder-bear.com/">我的博客</a>
 /////
 欢迎Star和Fork～
+感谢测试者@<a href="https://github.com/govmoe">GovMoe</a>
 <h4>来说说该主题的优点</h4>
 <li>可自定义性强</li>
 <li>加载快</li>
